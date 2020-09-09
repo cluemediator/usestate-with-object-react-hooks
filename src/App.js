@@ -6,7 +6,8 @@ function App() {
 
   // handle change event of the input
   const handleChange = e => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    e.persist();
+    setUser(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
   }
 
   return (
